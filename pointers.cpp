@@ -4,9 +4,12 @@ bool splitTime(int totalSeconds, int* hours, int* minutes, int* seconds) {
     }
 
     // Calculate hours, minutes, and seconds
-    *hours = totalSeconds / 3600;
-    *minutes = (totalSeconds % 3600) / 60;
-    *seconds = totalSeconds % 60;
+    if (hours != nullptr)
+        *hours = totalSeconds / 3600;
+    if (minutes != nullptr)
+        *minutes = (totalSeconds % 3600) / 60;
+    if (seconds != nullptr)
+        *seconds = totalSeconds % 60;
     return true;
 }
 
